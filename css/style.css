@@ -70,7 +70,7 @@ span{
 }
 @media(max-width: 900px){
     body{
-        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/mobbg.jpg");
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/bg1.jpg");
 
     }
     .ham-btn{
