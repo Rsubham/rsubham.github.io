@@ -27,7 +27,7 @@
         font-size: 30px;
         font-weight: 800;
         font-family: 'IBM Plex Mono', monospace;
-        margin-top: -25px;
+        margin-top: -30px;
         margin-bottom: 20px;
     }
     .education .data {
@@ -284,8 +284,9 @@
         font-weight: 600;
     }
     @media (max-width: 1200px) {
-        .certificates-list .certificates-item {
-            padding: 15px;
+        .certificates-list {
+            padding: 0px 10px 0px 10px;
+            margin: 0 auto;
         }
     }
     
@@ -296,67 +297,6 @@
         }
     }
   
-  /* Project Cards Styling */
-  .projects_cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .projects_cards_item {
-    display: flex;
-    padding: 1rem;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25));
-  }
-  
-  /* Project Card Styling */
-  .projects_card {
-    background-color: rgba(255, 255, 255, 0.582);
-    border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding-left: 20px; /* Adjusted padding */
-    background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px), #6ac0dd4a 0 1.2rem) right bottom / 100% 100%, linear-gradient(rgba(255, 0, 0, 0.479) 0 0) 20px 0 / 2px 100% #ffffff26;
-    background-repeat: no-repeat;
-    line-height: 1.2rem;
-    -webkit-mask: radial-gradient(circle .8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
-  }
-  
-  .projects_card_content {
-    padding: 1.2rem;
-  }
-  
-  /* Text Styling */
-  h2.projects_card_title, p, p b , p a{
-    color: #ffffff;
-    font-family: monospace;
-    margin: 1.16rem 0; /* Adjusted margin */
-  }
-  
-  h2.projects_card_title {
-    text-decoration: underline;
-    font-size: 1.25em; /* Adjusted font size */
-  }
-  
-  .projects_card_text p {
-    font-size: 1.2em; /* Adjusted font size */
-  }
-  
-  /* Links Styling */
-  a {
-    color: #6ac0dd; /* Adjusted link color */
-    text-decoration: underline;
-  }
-  
-  /* Hover Effect for Links */
-  a:hover {
-    color: #ffffff;
-  }
-  
-
 </style>
 <body>
     <div>
@@ -421,60 +361,27 @@
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 <h2 style="margin-top: 40px;">Project Details:</h2>
             </header>
-            <div class="projects">
-                <ul class="projects_cards">
+            <div class="project_container">
+                <div class="project">
+                    <h2>Automated Library Management System:</h2>
+                    <p><a href="https://github.com/Rsubham/Automated-Library-Management-System.git/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">git-repo(source_code)↗️</a></p>
+                    <p><a href="https://mcalibrarymanagement.000webhostapp.com/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">visit-site(hosted_page)↗️</a></p>
+                    <p style="color: #34d3ff;"><strong>Your Role :</strong> Front-end and Back-end Developer (Solo Project)</p>
+                    <p style="color: #34d3ff;"><strong>Technologies/Tools Used :</strong> HTML, CSS, JavaScript, PHP, MySQL, VSCode, XAMPP</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Description :</strong> The Automated Library Management System is a comprehensive solution developed to streamline and enhance library operations. As the sole developer handling both front-end and back-end aspects, I aimed to create a user-friendly system that automates various library processes. The system incorporates HTML for structure, CSS for styling, and JavaScript for dynamic functionality. PHP serves as the server-side scripting language, facilitating seamless communication with the MySQL database. This project was developed using VSCode, and XAMPP was employed for local testing and deployment.</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Outcome :</strong> The Automated Library Management System successfully streamlines library processes, offering features like efficient book request management, real-time updates on book availability, and a user-friendly interface for both administrators and students.</p>
+                </div>
         
-                  <li class="projects_cards_item">
-                    <div class="projects_card">
-                      <div class="projects_card_content">
-                        <h2 class="projects_card_title">Automated Library Management System:</h2>
-                        <p><a href="https://github.com/Rsubham/Automated-Library-Management-System.git/" target="_blank" style="text-decoration: underline; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">git-repo(source_code)↗️</a></p>
-                        <p><a href="https://mcalibrarymanagement.000webhostapp.com/" target="_blank" style="text-decoration: underline; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">visit-site(hosted_page)↗️</a></p>
-                        <div class="projects_card_text">
-                          <p>
-                            <b>->Role in the Project:</b> Front-end and Back-end Developer (Solo Project)
-                          </p>
-                          <p>
-                            <b>->Technologies/Tools Used:</b> HTML5, CSS3, PHP, JavaScript, MySQL Database, XAMPP, VScode
-                          </p>
-                          <p>
-                            <b>->Project Description:</b> The Automated Library Management System is a comprehensive solution developed to streamline and enhance library operations. As the sole developer handling both front-end and back-end aspects, I aimed to create a user-friendly system that automates various library processes. The system incorporates HTML for structure, CSS for styling, and JavaScript for dynamic functionality. PHP serves as the server-side scripting language, facilitating seamless communication with the MySQL database. This project was developed using VSCode, and XAMPP was employed for local testing and deployment.
-                          </p>
-                          <p>
-                            <b>->Project Outcome:</b> The Automated Library Management System successfully streamlines library processes, offering features like efficient book request management, real-time updates on book availability, and a user-friendly interface for both administrators and students.
-                          </p>
-        
-                          </div>
-                      </div>
-                    </div>
-                  </li>
-        
-                  <li class="projects_cards_item">
-                    <div class="projects_card">
-                      <div class="projects_card_content">
-                        <h2 class="projects_card_title">Responsive Portfolio WebSite:</h2>
-                        <p><a href="https://github.com/Rsubham/rsubham.github.io.git/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">git-repo(source_code)↗️</a></p>
-                        <p><a href="https://rsubham.github.io/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">visit-site(hosted_page)↗️</a></p>
-                        <div class="projects_card_text">
-                          <p>
-                            <b>->Role in the Project:</b> Front-end(Solo Project)
-                          </p>
-                          <p>
-                            <b>->Technologies/Tools Used:</b> HTML5, CSS3, JavaScript VScode
-                          </p>
-                          <p>
-                            <b>->Project Description:</b> My Personal Portfolio Website is a visually compelling representation of my skills, projects, and experiences as a front-end developer. Developed with HTML, CSS, and JavaScript, the website boasts a highly responsive design and an aesthetically pleasing user interface. The project was meticulously crafted using the Visual Studio Code (VSCode) editor.
-                          </p>
-                          <p>
-                            <b>->Project Outcome:</b>The Personal Portfolio Website stands as a testament to my expertise, providing a seamless and engaging platform for visitors. Its responsive design ensures an optimal experience on various devices. The curated project showcase, interactive elements, and intuitive navigation collectively deliver an immersive journey into my skills and projects. This website serves as a compelling representation, facilitating connections and opportunities within the development community.
-                          </p>
-                          </div>
-                      </div>
-                    </div>
-                  </li>
-        
-                </ul>
-              </div>
+                <div class="project">
+                    <h2>Personal Portfolio Website:</h2>
+                    <p><a href="https://github.com/Rsubham/rsubham.github.io.git/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">git-repo(source_code)↗️</a></p>
+                    <p><a href="https://rsubham.github.io/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">visit-site(hosted_page)↗️</a></p>
+                    <p style="color: #34d3ff;"><strong>Your Role :</strong> Front-end Developer (Solo Project)</p>
+                    <p style="color: #34d3ff;"><strong>Technologies/Tools Used :</strong> HTML, CSS, JavaScript, VSCode</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Description :</strong> My Personal Portfolio Website is a visually compelling representation of my skills, projects, and experiences as a front-end developer. Developed with HTML, CSS, and JavaScript, the website boasts a highly responsive design and an aesthetically pleasing user interface. The project was meticulously crafted using the Visual Studio Code (VSCode) editor.</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Outcome :</strong> The Personal Portfolio Website stands as a testament to my expertise, providing a seamless and engaging platform for visitors. Its responsive design ensures an optimal experience on various devices. The curated project showcase, interactive elements, and intuitive navigation collectively deliver an immersive journey into my skills and projects. This website serves as a compelling representation, facilitating connections and opportunities within the development community.</p>
+                </div>
+            </div>
 
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 <h2 style="margin-top: 40px;">Certifications:</h2>
