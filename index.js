@@ -7,19 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Prevent default action for the hamburger button click
     event.preventDefault();
 
-    // Check if the menu is currently open
-    const isOpen = navbar.classList.contains('active');
-
     // Toggle 'active' class for navbar and header
     navbar.classList.toggle('active');
     header.classList.toggle('active');
 
     // Toggle hamburger icons based on menu state
-    hamBtn.querySelector('.ham-icon[name="menu-outline"]').style.display = isOpen ? 'block' : 'none';
-    hamBtn.querySelector('.ham-icon[name="close-outline"]').style.display = isOpen ? 'none' : 'block';
+    hamBtn.querySelector('.ham-icon[name="menu-outline"]').style.display = navbar.classList.contains('active') ? 'none' : 'block';
+    hamBtn.querySelector('.ham-icon[name="close-outline"]').style.display = navbar.classList.contains('active') ? 'block' : 'none';
 
-    // Toggle body overflow to prevent scrolling when the menu is open
-    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+    // Toggle body class to manage scroll behavior
+    document.body.classList.toggle('menu-open');
   });
 
   // Add event listener to close the navbar when clicking outside of it
@@ -38,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         hamBtn.querySelector('.ham-icon[name="menu-outline"]').style.display = 'block';
         hamBtn.querySelector('.ham-icon[name="close-outline"]').style.display = 'none';
 
-        // Restore body overflow
-        document.body.style.overflow = 'auto';
+        // Remove body class to restore scroll behavior
+        document.body.classList.remove('menu-open');
       }
     }
   });
