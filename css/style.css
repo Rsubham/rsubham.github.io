@@ -269,120 +269,45 @@ p {
 .skills-container {
     backdrop-filter: blur(50px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.256);
-    width: 90%;
+    width: 60%;
     margin: 30px auto;
     color: #fff;
-    padding-bottom: 0px;
+    padding: 10px ;
     border-radius: 15px;
-  }
+    overflow: hidden; /* To contain floated elements */
+    text-align: center; /* Center align child elements */
+}
 
-  .skills-container li {
-    /* style the li tag */
-    list-style-type: none;
-    font-family: sans-serif;
-    display: inline-block;
-    width: 100%; /* initially full width for small screens */
-    text-align: center;
-  }
-  
-  .bar-container {
-    /* container for progress bar and percentage text */
-    position: relative;
-    padding: 0px 10px 10px 10px;
-  }
+/* Style for skill images */
+.skills-container img {
+    width: 15%; /* Set a fixed width of 10% for each image */
+    height: auto;
+    display: inline-block; /* Display images in a row */
+    margin-right: 2%; /* Add some right margin for spacing */
+    border-radius: 8px;
+}
 
-  .bar-container h3{
-    margin-top: 0px;
-    text-align: left;
-    font-weight: 600;
-    font-size: medium;
-  }
+/* Clear the margin for the last image in a row */
+.skills-container img:last-child {
+    margin-right: 0;
+}
 
-  .bar {
-    /* style the bar */
-    background-color: #353b48;
-    display: block;
-    height: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 0 10px #27cefc;
-  }
-  
-  .bar span {
-    /* style the span tag */
-    height: 2px;
-    float: left;
-    background-color: #15ccff;
-    margin-left: -2.9px;
-  }
-  
-  .skill_html{
-    /* set common styles for skills and animation */
-    width: 90%;
-    animation: growSkill 2s;
-  }
-  .skill_css{
-    /* set common styles for skills and animation */
-    width: 90%;
-    animation: growSkill 2s;
-  }
-  .skill_java{
-    /* set common styles for skills and animation */
-    width: 80%;
-    animation: growSkill 2s;
-  }
-  .skill_php{
-    /* set common styles for skills and animation */
-    width: 90%;
-    animation: growSkill 2s;
-  }
-  .skill_mysql{
-    /* set common styles for skills and animation */
-    width: 85%;
-    animation: growSkill 2s;
-  }
-  .skill_javascript{
-    /* set common styles for skills and animation */
-    width: 60%;
-    animation: growSkill 2s;
-  }
-  .skill_cpp{
-    /* set common styles for skills and animation */
-    width: 95%;
-    animation: growSkill 2s;
-  }
-  .skill_c{
-    /* set common styles for skills and animation */
-    width: 90%;
-    animation: growSkill 2s;
-  }
-  .skill_webdev{
-    /* set common styles for skills and animation */
-    width: 85%;
-    animation: growSkill 2s;
-  }
-  .skill_webdes{
-    /* set common styles for skills and animation */
-    width: 90%;
-    animation: growSkill 2s;
-  }
-  
-  
-  @keyframes growSkill {
-    /* animate skills */
-    0% {
-      width: 0%;
+/* Media query for tablet */
+@media only screen and (max-width: 768px) {
+    .skills-container img {
+        width: calc(25% - 2%); /* 3 images in a row */
     }
-    100% {
-      width: 80%;
+    .skills-container {
+        backdrop-filter: blur(50px);
     }
-  }
+}
 
-  /* Media queries for responsiveness */
-  @media (min-width: 600px) {
-    .skills-container li {
-      width: 30%; /* set width to 30% for larger screens */
-      margin: 20px 1.5%;
+/* Media query for mobile */
+@media only screen and (max-width: 480px) {
+    .skills-container img {
+        width: calc(30% - 2%); /* 1 image in a row */
     }
-  }
+    .skills-container {
+        backdrop-filter: blur(50px);
+    }
+}
