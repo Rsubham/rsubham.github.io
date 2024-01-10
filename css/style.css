@@ -240,6 +240,7 @@ p {
     width: 48%;
     backdrop-filter: blur(10px); 
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.256);
+    border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
     color: #20dff9;
@@ -266,12 +267,13 @@ p {
 }
 
 .skills-container {
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(50px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.256);
     width: 90%;
     margin: 30px auto;
     color: #fff;
     padding-bottom: 0px;
+    border-radius: 15px;
   }
 
   .skills-container li {
@@ -293,6 +295,7 @@ p {
     margin-top: 0px;
     text-align: left;
     font-weight: 600;
+    font-size: medium;
   }
 
   .bar {
