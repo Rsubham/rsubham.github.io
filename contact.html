@@ -16,23 +16,22 @@
       <link type="text/css" href="css/style.css" rel="stylesheet">
     </head>
 <style>
-    
-    form{
-      margin: 30px;
+    body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0,0,0,0.7)),url("../img/lbg5.jpg");
     }  
-    .container1 { 
+    .form-container { 
       border-radius: 25px;
-      box-shadow: 8px 8px 30px 0 #ed1a3e75;
-      margin-left: 7%;
-      margin-right:auto;
-      margin-top: 50px;
-      margin-bottom: auto;
+      box-shadow: 10px 10px 10px 0 #8be6ff4f;
+      margin: 30px auto;
       overflow: hidden;
       max-height: 35em;
       max-width: 700px;
       min-height: auto;
       min-width: auto;
       background-color: #4645455d;
+    }
+    form{
+      margin: 30px;
     }
     h2 {
       font-size:2rem;
@@ -42,12 +41,12 @@
     input, textarea {
         font-family: 'Roboto Mono', monospace;
         background-color: #5353535f;
-        color: #e91010e8;
+        color: rgb(195, 195, 195);
         border: none;
         padding: 10px 15px;
         margin: 8px 0;
         width: 100%;
-        font-weight: 800;
+        font-weight: 600;
         min-width: 630px;
         max-width: 630px;
         max-height: 200px;
@@ -77,24 +76,22 @@
     .contact-btn{
       display: inline;
     }
-
-    @media only screen and (max-width: 800px) {
-        .container1 {
+@media only screen and (max-width: 800px) {
+        .form-container {
           border-radius: 25px;
-          box-shadow: 8px 8px 30px 0 #ed1a3e75;
-          margin-left:auto;
-          margin-right: 1%;
-          margin-top: 120px;
-          margin-bottom: auto;
+          box-shadow: 8px 8px 30px 0 #8be6ff4f;
+          margin:50px auto;
           overflow: hidden;
           background-color: #4645455d;
           }
           input, textarea{
+            margin: 10px auto;
             max-height: 15em;
-            max-width: 350px;
+            max-width: 500px;
             min-height: auto;
-            min-width: auto;          }
+            min-width: auto;          
           }
+    }
 </style>
 <body>
     <header class="header">
@@ -104,7 +101,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="about.html">Who Am I</a></li>
-                    <li><a href="contact.html" style="color:#34d3ff;text-decoration: underline;">Connect With Me</a></li>
+                    <li><a href="contact.html" style="color:#8be6ff;text-decoration: underline;">Connect With Me</a></li>
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
@@ -114,9 +111,7 @@
             </div>
     </header>
     
-    <div class="container1">
-      <div class="form-container1">
-
+    <div class="form-container">
             <form action="https://formspree.io/f/xqkjergj" method="POST" id="my-form">
               <h2 class="lg-view">Let's Connect</h2>
               <input type="text" placeholder="Name" name="Name" required/>
@@ -130,7 +125,6 @@
               </div>
             </form>
       </div>
-    </div>
     
           <script>
             var form = document.getElementById("my-form");

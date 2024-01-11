@@ -14,20 +14,23 @@
     <link type="text/css" href="css/style.css" rel="stylesheet">
 </head>
 <style>
+    body{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0,0,0,0.7)),url("../img/lbg4.jpg");
+    }
+    .section-header h2{
+        letter-spacing: 4px;
+        color: #b4efff;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 100;
+        font-size: 40px;
+        font-weight: 700;
+        font-family: 'Dancing Script', cursive;
+        margin-bottom: 20px;
+    }
     .education { 
         position: relative;
         padding: 45px 0 15px 0;
-    }
-    .section-header h2{
-        text-decoration: underline;
-        color: #34d3ff;
-        text-align: center;
-        font-weight: 100;
-        font-size: 35px;
-        font-weight: 700;
-        font-family: 'Dancing Script', cursive;
-        margin-top: -30px;
-        margin-bottom: 20px;
     }
     .education .data {
         position: relative;
@@ -37,7 +40,7 @@
         content: '';
         position: absolute;
         width: 3px;
-        background: #34d3ff;
+        background: #8be6ff;
         top: 0;
         bottom: 0;
         left: 50%;
@@ -69,7 +72,7 @@
         top: 45px;
         right: -10px;
         background: #ffffff;
-        border: 2px solid #34d3ff;
+        border: 2px solid #8be6ff;
         border-radius: 16px;
         z-index: 1;
     }
@@ -85,11 +88,11 @@
         right: 10px;
         z-index: 1;
         border: 10px solid;
-        border-color: transparent transparent transparent #34d3ff;
+        border-color: transparent transparent transparent #8be6ff;
       }
       .education .data .data-item.right::before {
         left: 10px;
-        border-color: transparent #34d3ff transparent transparent;
+        border-color: transparent #8be6ff transparent transparent;
       }
       .education .data .data-date {
         position: absolute;
@@ -97,7 +100,7 @@
         top: 45px;
         font-size: 16px;
         font-weight: 600;
-        color: #34d3ff;
+        color: #8be6ff;
         text-transform: uppercase;
         letter-spacing: 1px;
         z-index: 1;
@@ -114,11 +117,11 @@
         right: calc(100% + 55px);
     }
     .education .data .data-text {
+        backdrop-filter: blur(10px);
         padding: 30px;
-        background: #000000bb;
         position: relative;
         border-right: 5px solid #8f8f8ff0;
-        box-shadow: 5px 5px 10px 0 #ed1a3d47;
+        box-shadow: 5px 5px 10px 0 #8be6ff58;
     }
     .education .data .data-item.right .data-text {
         margin-right: 7%;
@@ -136,7 +139,7 @@
         font-size: 20px;
         font-style: italic;
         font-weight: 600;
-        color: #34d3ff;
+        color: #8be6ff;
     }
     .education .data .data-text p {
         font: message-box;
@@ -199,9 +202,8 @@
     }
     
     .certificates-list .certificates-item {
-        background: #ffffff1c;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         padding: 5px 5px 0px 5px ;
         border-radius: 10px;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
@@ -306,7 +308,7 @@
                 <nav class="navbar">
                     <ul class="navbar-list">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="portfolio.html" style="color:#34d3ff;text-decoration: underline;">Portfolio</a></li>
+                        <li><a href="portfolio.html" style="color:#8be6ff;text-decoration: underline;">Portfolio</a></li>
                         <li><a href="about.html">Who Am I</a></li>
                         <li><a href="contact.html">Connect With Me</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -324,7 +326,7 @@
         <div class="container">
             
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <h2>Academic Qualification:</h2>
+                <h2 style="margin-top: -30px;">Academic Qualification:</h2>
             </header>
             <div class="data">
                 <div class="data-item left wow slideInLeft" data-wow-delay="0.1s">
@@ -350,7 +352,7 @@
             </div>
 
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <h2 style="margin-top: 40px;">My Tech Toolkit:</h2>
+                <h2>My Tech Toolkit:</h2>
             </header>
             <div class="skills-container">
                 <!-- Replace the following URLs with your actual image URLs -->
@@ -369,32 +371,32 @@
               
 
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <h2 style="margin-top: 40px;">Project Details:</h2>
+                <h2>Project Details:</h2>
             </header>
             <div class="project_container">
                 <div class="project">
                     <h2>Automated Library Management System:</h2>
                     <p><a href="https://github.com/Rsubham/Automated-Library-Management-System.git/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">git-repo(source_code)↗️</a></p>
                     <p><a href="https://mcalibrarymanagement.000webhostapp.com/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">visit-site(hosted_page)↗️</a></p>
-                    <p style="color: #34d3ff;"><strong>Your Role :</strong> Front-end and Back-end Developer (Solo Project)</p>
-                    <p style="color: #34d3ff;"><strong>Technologies/Tools Used :</strong> HTML, CSS, JavaScript, PHP, MySQL, VSCode, XAMPP</p>
-                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Description :</strong> The Automated Library Management System is a comprehensive solution developed to streamline and enhance library operations. As the sole developer handling both front-end and back-end aspects, I aimed to create a user-friendly system that automates various library processes. The system incorporates HTML for structure, CSS for styling, and JavaScript for dynamic functionality. PHP serves as the server-side scripting language, facilitating seamless communication with the MySQL database. This project was developed using VSCode, and XAMPP was employed for local testing and deployment.</p>
-                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Outcome :</strong> The Automated Library Management System successfully streamlines library processes, offering features like efficient book request management, real-time updates on book availability, and a user-friendly interface for both administrators and students.</p>
+                    <p style="color: #8be6ff;"><strong>Your Role :</strong> Front-end and Back-end Developer (Solo Project)</p>
+                    <p style="color: #8be6ff;"><strong>Technologies/Tools Used :</strong> HTML, CSS, JavaScript, PHP, MySQL, VSCode, XAMPP</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #8be6ff;">Project Description :</strong> The Automated Library Management System is a comprehensive solution developed to streamline and enhance library operations. As the sole developer handling both front-end and back-end aspects, I aimed to create a user-friendly system that automates various library processes. The system incorporates HTML for structure, CSS for styling, and JavaScript for dynamic functionality. PHP serves as the server-side scripting language, facilitating seamless communication with the MySQL database. This project was developed using VSCode, and XAMPP was employed for local testing and deployment.</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #8be6ff;">Project Outcome :</strong> The Automated Library Management System successfully streamlines library processes, offering features like efficient book request management, real-time updates on book availability, and a user-friendly interface for both administrators and students.</p>
                 </div>
         
                 <div class="project">
                     <h2>Personal Portfolio Website:</h2>
                     <p><a href="https://github.com/Rsubham/rsubham.github.io.git/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">git-repo(source_code)↗️</a></p>
                     <p><a href="https://rsubham.github.io/" target="_blank" style="text-decoration: none; color:rgb(255, 89, 0); font-size:15px; font-weight:600;">visit-site(hosted_page)↗️</a></p>
-                    <p style="color: #34d3ff;"><strong>Your Role :</strong> Front-end Developer (Solo Project)</p>
-                    <p style="color: #34d3ff;"><strong>Technologies/Tools Used :</strong> HTML, CSS, JavaScript, VSCode</p>
-                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Description :</strong> My Personal Portfolio Website is a visually compelling representation of my skills, projects, and experiences as a front-end developer. Developed with HTML, CSS, and JavaScript, the website boasts a highly responsive design and an aesthetically pleasing user interface. The project was meticulously crafted using the Visual Studio Code (VSCode) editor.</p>
-                    <p style="word-spacing: 4px;"><strong  style="color: #34d3ff;">Project Outcome :</strong> The Personal Portfolio Website stands as a testament to my expertise, providing a seamless and engaging platform for visitors. Its responsive design ensures an optimal experience on various devices. The curated project showcase, interactive elements, and intuitive navigation collectively deliver an immersive journey into my skills and projects. This website serves as a compelling representation, facilitating connections and opportunities within the development community.</p>
+                    <p style="color: #8be6ff;"><strong>Your Role :</strong> Front-end Developer (Solo Project)</p>
+                    <p style="color: #8be6ff;"><strong>Technologies/Tools Used :</strong> HTML, CSS, JavaScript, VSCode</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #8be6ff;">Project Description :</strong> My Personal Portfolio Website is a visually compelling representation of my skills, projects, and experiences as a front-end developer. Developed with HTML, CSS, and JavaScript, the website boasts a highly responsive design and an aesthetically pleasing user interface. The project was meticulously crafted using the Visual Studio Code (VSCode) editor.</p>
+                    <p style="word-spacing: 4px;"><strong  style="color: #8be6ff;">Project Outcome :</strong> The Personal Portfolio Website stands as a testament to my expertise, providing a seamless and engaging platform for visitors. Its responsive design ensures an optimal experience on various devices. The curated project showcase, interactive elements, and intuitive navigation collectively deliver an immersive journey into my skills and projects. This website serves as a compelling representation, facilitating connections and opportunities within the development community.</p>
                 </div>
             </div>
 
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <h2 style="margin-top: 40px;">Certifications:</h2>
+                <h2>Certifications:</h2>
             </header>
             <div class="certificates-list">
         

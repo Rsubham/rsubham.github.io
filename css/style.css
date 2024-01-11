@@ -17,7 +17,6 @@ body{
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0,0,0,0.7)),url("../img/bg1.jpg");
 }
 body::-webkit-scrollbar{
     display: none;
@@ -37,7 +36,7 @@ body::-webkit-scrollbar{
 }
 span{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #34d3ff;
+    color: #8be6ff;
     padding-left: 3px;
 }
 .navbar ul li{
@@ -53,7 +52,7 @@ span{
     font-size: larger;
 }
 .navbar ul li a:hover{
-    color: #34d3ff;
+    color: #8be6ff;
     transition: 0.3s;
 }
 .ham-btn{
@@ -62,7 +61,7 @@ span{
     cursor: pointer;
 }
 .ham-icon{
-    color: #34d3ff;
+    color: #8be6ff;
     width: 30px;
     height: 30px;
 }
@@ -82,9 +81,6 @@ span{
     .header{
         position: relative;
     }
-
-    /* Existing CSS code */
-
 .navbar {
     width: 100%;
     height: 100vh;
@@ -121,12 +117,10 @@ span{
         align-items: center;
     }
     .active .navbar{
-
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
-        pointer-events: auto;
-        
+        pointer-events: auto;        
     }
     .active .ham-btn .ham-icon[name="close-outline"]{
         display: block;
@@ -134,7 +128,6 @@ span{
     .active .ham-btn .ham-icon[name="menu-outline"]{
         display: none;
     }
-
 }
 @media only screen and (min-width: 801px){
     .proffesion{
@@ -145,10 +138,7 @@ span{
     .hibox .typing-text{
         display: none;
     }
-
 }
-
-
 h2 {
     color: white;
     font-size: 45px;
@@ -164,12 +154,9 @@ p {
     margin-top: 25vh;
     padding-left: 10%;
 }
-
-
 .typing-text{
     display: flex;
     overflow: hidden;
-
 }
 .typing-text .static-text{
     margin-left: 3px;
@@ -184,7 +171,7 @@ p {
 .dynamic-text li{
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 16.6px;
-    color: #34d3ff;
+    color: #8be6ff;
     list-style: none;
     font-size: 45px;
     font-weight: 300;
@@ -208,7 +195,7 @@ p {
     height: 100%;
     width: 100%;
     background: black;
-    border-left: 2px solid #34d3ff;
+    border-left: 2px solid #8be6ff;
     animation: typing 1.5s steps(20) infinite;
 }
 @keyframes typing{
@@ -230,7 +217,7 @@ p {
 
 .project_container {
     max-width: 1200px;
-    margin: 20px 40px;
+    margin: 30px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -249,7 +236,7 @@ p {
 .project h2{
   text-decoration: underline;
   font-size: 1em;
-  color: #34d3ff;
+  color: #8be6ff;
 }
 .project p, .project li{
   margin-top: 10px;
@@ -268,8 +255,8 @@ p {
 }
 
 .skills-container {
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.256);
     width: 60%;
     margin: 30px auto;
@@ -282,7 +269,7 @@ p {
 
 /* Style for skill images */
 .skills-container img {
-    width: 15%; /* Set a fixed width of 10% for each image */
+    width: 17%; /* Set a fixed width of 10% for each image */
     height: auto;
     display: inline-block; /* Display images in a row */
     margin-right: 2%; /* Add some right margin for spacing */
