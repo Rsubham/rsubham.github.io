@@ -3,9 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
-
 html{
     overflow-x: hidden;
 }
@@ -101,6 +99,9 @@ span{
 .ham-btn {
     z-index: 1001; /* Set a higher z-index */
 }
+body.menu-open {
+    overflow: hidden;
+  }
     .navbar ul {
     display: flex;
     flex-direction: column;
@@ -152,7 +153,7 @@ p {
 }
 .hibox{
     margin-top: 25vh;
-    padding-left: 10%;
+    padding-left: 8%;
 }
 .typing-text{
     display: flex;
