@@ -4,8 +4,8 @@
     --bg-base: #09090b;
     /* Zinc 950 */
     --text-primary: #fafafa;
-    --text-secondary: #a1a1aa;
-    --text-tertiary: #52525b;
+    --text-secondary: #aeaeb7;
+    --text-tertiary: #61616c;
 
     /* glass effect values */
     --glass-bg: rgba(255, 255, 255, 0.015);
@@ -376,6 +376,7 @@ ul {
     font-size: 0.9rem;
     color: var(--text-secondary);
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .navbar-list a:hover {
@@ -515,7 +516,7 @@ ul {
 }
 
 .profile-photo:hover {
-    filter: grayscale(0%);
+    filter: grayscale(25%);
 }
 
 .photo-placeholder {
@@ -630,7 +631,7 @@ ul {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 3rem;
-    max-width: 90%;
+    max-width: 100%;
 }
 
 .tech-tags {
