@@ -5,6 +5,7 @@
     // Smooth Scroll
     class SmoothScroll {
         constructor() {
+            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
             this.current = window.scrollY;
             this.target = window.scrollY;
             this.ease = 0.08;

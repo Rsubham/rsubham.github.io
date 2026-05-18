@@ -159,6 +159,13 @@ h6 {
     letter-spacing: -0.03em;
 }
 
+a,
+button,
+.liquid-btn,
+.ham-btn {
+    touch-action: manipulation;
+}
+
 a {
     text-decoration: none;
     color: inherit;

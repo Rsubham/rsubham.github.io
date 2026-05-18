@@ -1,10 +1,4 @@
 /* Animation System */
-
-html {
-    scroll-behavior: auto !important;
-}
-
-/* Legacy reveal override */
 .reveal {
     opacity: 1 !important;
     transform: none;
