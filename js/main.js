@@ -5,48 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
 
     if (hamBtn && navbar && header) {
-        const toggleMenu = (e) => {
+        hamBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation();
-            const isActive = navbar.classList.toggle('active');
+            navbar.classList.toggle('active');
             header.classList.toggle('active');
             document.body.classList.toggle('menu-open');
-
-            const menuIcon = hamBtn.querySelector('ion-icon[name="menu-outline"]');
-            const closeIcon = hamBtn.querySelector('ion-icon[name="close-outline"]');
-
-            menuIcon.style.display = isActive ? 'none' : 'block';
-            closeIcon.style.display = isActive ? 'block' : 'none';
-        };
-
-        hamBtn.addEventListener('click', toggleMenu);
-        hamBtn.addEventListener('touchstart', toggleMenu, { passive: false });
+        });
 
         document.querySelectorAll('.navbar-list a').forEach(link => {
-            const closeMenu = (e) => {
-                if (e.type === 'touchstart') {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    if (targetId && targetId.startsWith('#')) {
-                        const targetEl = document.querySelector(targetId);
-                        if (targetEl) {
-                            targetEl.scrollIntoView({ behavior: 'smooth' });
-                            history.pushState(null, null, targetId);
-                        }
-                    } else {
-                        window.location.href = link.href;
-                    }
-                }
-
+            link.addEventListener('click', () => {
                 navbar.classList.remove('active');
                 header.classList.remove('active');
                 document.body.classList.remove('menu-open');
-                hamBtn.querySelector('ion-icon[name="menu-outline"]').style.display = 'block';
-                hamBtn.querySelector('ion-icon[name="close-outline"]').style.display = 'none';
-            };
-
-            link.addEventListener('click', closeMenu);
-            link.addEventListener('touchstart', closeMenu, { passive: false });
+            });
         });
     }
 

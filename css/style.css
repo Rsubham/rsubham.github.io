@@ -159,13 +159,6 @@ h6 {
     letter-spacing: -0.03em;
 }
 
-a,
-button,
-.liquid-btn,
-.ham-btn {
-    touch-action: manipulation;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -377,11 +370,29 @@ ul {
 
 .ham-btn {
     display: none;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.8rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 1100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s var(--ease-out-expo);
+    padding: 0;
+}
+
+.ham-line {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: var(--text-primary);
+    transition: transform 0.4s var(--ease-out-expo), opacity 0.4s var(--ease-out-expo), background-color 0.4s;
+    border-radius: 2px;
 }
 
 /* Hero Section */
@@ -894,22 +905,48 @@ ul {
     }
 
     .ham-btn {
-        display: block;
+        display: flex;
         z-index: 1100;
         position: relative;
+    }
+
+    /* Active / Cross morphing */
+    .header.active .ham-btn .line-1 {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .header.active .ham-btn .line-2 {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .header.active .ham-btn .line-3 {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .ham-btn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
+    }
+
+    .ham-btn:active {
+        transform: scale(0.95);
     }
 
     .navbar {
         position: fixed;
         inset: 0;
-        background: var(--bg-base);
+        background: rgba(9, 9, 11, 0.75);
+        backdrop-filter: blur(35px);
+        -webkit-backdrop-filter: blur(35px);
         display: flex;
         align-items: center;
         justify-content: center;
         opacity: 0;
         transform: translateY(-20px);
         pointer-events: none;
-        transition: 0.4s var(--ease-out-expo);
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1050;
     }
 
@@ -922,11 +959,69 @@ ul {
     .navbar-list {
         flex-direction: column;
         gap: 2.5rem;
+        align-items: center;
+    }
+
+    .navbar-list li {
+        transform: translateY(40px);
+        opacity: 0;
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .navbar.active .navbar-list li {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .navbar.active .navbar-list li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .navbar.active .navbar-list li:nth-child(2) {
+        transition-delay: 0.18s;
+    }
+
+    .navbar.active .navbar-list li:nth-child(3) {
+        transition-delay: 0.26s;
+    }
+
+    .navbar.active .navbar-list li:nth-child(4) {
+        transition-delay: 0.34s;
     }
 
     .navbar-list a {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-family: var(--font-display);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        position: relative;
+        padding: 0.5rem 1rem;
+        color: var(--text-secondary);
+        transition: color 0.4s var(--ease-out-expo);
+    }
+
+    .navbar-list a:hover,
+    .navbar-list a.active {
+        color: var(--text-primary);
+    }
+
+    /* Underline effect on mobile hover/active */
+    .navbar-list a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #2dd4bf, #818cf8);
+        transition: width 0.4s var(--ease-out-expo), left 0.4s var(--ease-out-expo);
+        transform: translateZ(0);
+    }
+
+    .navbar-list a:hover::after,
+    .navbar-list a.active::after {
+        width: 100%;
+        left: 0;
     }
 
     .logo {

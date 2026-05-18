@@ -3,12 +3,19 @@
     'use strict';
 
     // Smooth Scroll
+    // Smooth Scroll
     class SmoothScroll {
         constructor() {
+            // Disable custom smooth scroll on touch/mobile devices to protect native touch momentum
             if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+            // Disable native smooth scroll to prevent rendering conflicts on desktop
+            document.documentElement.style.scrollBehavior = 'auto';
+
             this.current = window.scrollY;
             this.target = window.scrollY;
             this.ease = 0.08;
+            this.isMoving = false;
             this.init();
         }
         init() {
@@ -55,6 +62,14 @@
                 }
             });
 
+            // Sync scroll state on external or scrollbar-driven scrolls
+            window.addEventListener('scroll', () => {
+                if (!this.isMoving) {
+                    this.current = window.scrollY;
+                    this.target = window.scrollY;
+                }
+            }, { passive: true });
+
             if (window.location.hash) {
                 const hash = window.location.hash;
                 const el = document.querySelector(hash);
@@ -76,16 +91,31 @@
                     });
                 }
             }
-
-            this.tick();
         }
-        clamp() { this.target = Math.max(0, Math.min(this.target, this.max())); }
+        clamp() {
+            this.target = Math.max(0, Math.min(this.target, this.max()));
+            this.startScrolling();
+        }
         max() { return document.documentElement.scrollHeight - window.innerHeight; }
+        startScrolling() {
+            if (!this.isMoving) {
+                this.isMoving = true;
+                requestAnimationFrame(() => this.tick());
+            }
+        }
         tick() {
+            if (!this.isMoving) return;
+
             this.current += (this.target - this.current) * this.ease;
-            if (Math.abs(this.target - this.current) < 0.5) this.current = this.target;
+            if (Math.abs(this.target - this.current) < 0.1) {
+                this.current = this.target;
+                this.isMoving = false;
+            }
             window.scrollTo(0, this.current);
-            requestAnimationFrame(() => this.tick());
+
+            if (this.isMoving) {
+                requestAnimationFrame(() => this.tick());
+            }
         }
     }
 
