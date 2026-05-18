@@ -1,13 +1,10 @@
-/* -- variables -- */
+/* Variables & Design Tokens */
 :root {
-    /* dark palette */
     --bg-base: #09090b;
-    /* Zinc 950 */
     --text-primary: #fafafa;
     --text-secondary: #aeaeb7;
     --text-tertiary: #61616c;
 
-    /* glass effect values */
     --glass-bg: rgba(255, 255, 255, 0.015);
     --glass-blur: blur(40px);
     --glass-border: rgba(255, 255, 255, 0.06);
@@ -15,23 +12,20 @@
     --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     --glass-inset: inset 0 1px 1px rgba(255, 255, 255, 0.1);
 
-    /* Typography */
     --font-display: 'Syne', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Layout */
     --container-w: 1300px;
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
 
-    /* Animation */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-/* reset */
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -52,7 +46,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* hide default scrollbar, using a custom one */
 ::-webkit-scrollbar {
     display: none;
 }
@@ -65,7 +58,6 @@ html {
 .custom-scrollbar-track {
     position: fixed;
     top: 80px;
-    /* Below navbar */
     right: 2px;
     bottom: 2px;
     width: 6px;
@@ -85,7 +77,7 @@ html {
     opacity: 0.6;
 }
 
-/* backgrounds */
+/* Backgrounds & Layout */
 .noise-overlay {
     position: fixed;
     inset: 0;
@@ -118,7 +110,6 @@ html {
     width: 70vw;
     height: 70vw;
     background: radial-gradient(circle, #2dd4bf 0%, transparent 60%);
-    /* Muted Teal */
     animation: drift 35s infinite alternate var(--ease-in-out-quint);
 }
 
@@ -128,7 +119,6 @@ html {
     width: 60vw;
     height: 60vw;
     background: radial-gradient(circle, #818cf8 0%, transparent 60%);
-    /* Muted Indigo */
     animation: drift 40s infinite alternate-reverse var(--ease-in-out-quint);
     animation-delay: -10s;
 }
@@ -139,7 +129,6 @@ html {
     width: 50vw;
     height: 50vw;
     background: radial-gradient(circle, #3f3f46 0%, transparent 50%);
-    /* Dark Zinc */
     animation: drift 25s infinite alternate var(--ease-in-out-quint);
 }
 
@@ -157,7 +146,7 @@ html {
     }
 }
 
-/*Typography*/
+/* Typography */
 h1,
 h2,
 h3,
@@ -187,7 +176,6 @@ ul {
     margin-top: 4rem;
 }
 
-/* layout */
 .container {
     width: 100%;
     max-width: var(--container-w);
@@ -196,7 +184,7 @@ ul {
 }
 
 .section {
-    padding: 10rem 0;
+    padding: 5rem 0;
     position: relative;
     z-index: 1;
 }
@@ -214,7 +202,6 @@ ul {
     background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
 }
 
-/* sticky left col */
 .col-left {
     position: sticky;
     top: 8rem;
@@ -234,7 +221,7 @@ ul {
     line-height: 1;
 }
 
-/* glass cards */
+/* Component Styles */
 .liquid-glass {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
@@ -249,7 +236,6 @@ ul {
     transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
 }
 
-/* shine sweep on hover */
 .liquid-glass::after {
     content: '';
     position: absolute;
@@ -273,7 +259,6 @@ ul {
     left: 150%;
 }
 
-/* buttons */
 .liquid-btn {
     display: inline-flex;
     align-items: center;
@@ -315,7 +300,6 @@ ul {
     opacity: 1;
 }
 
-/* outline/ghost variant */
 .liquid-btn-outline {
     background: transparent;
     border-top: 1px solid var(--glass-border);
@@ -328,7 +312,7 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* header & nav */
+/* Header & Navigation */
 .header {
     position: fixed;
     top: 0;
@@ -373,7 +357,8 @@ ul {
 }
 
 .navbar-list a {
-    font-size: 0.9rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
     color: var(--text-secondary);
     transition: color 0.3s;
     font-weight: 500;
@@ -392,7 +377,7 @@ ul {
     cursor: pointer;
 }
 
-/* Hero Section*/
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -445,14 +430,13 @@ ul {
     letter-spacing: -0.04em;
 }
 
-.hero-title span {
+.hero-title .hero-subtitle {
     color: var(--text-tertiary);
 }
 
 .hero-title em {
     font-style: italic;
     color: #2dd4bf;
-    /* subtle teal */
 }
 
 .hero-footer {
@@ -491,7 +475,6 @@ ul {
     color: var(--text-primary);
 }
 
-/* About Section*/
 .profile-photo-container {
     margin-top: 3rem;
     width: 100%;
@@ -502,6 +485,9 @@ ul {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    transform: translateZ(0);
 }
 
 .profile-photo {
@@ -511,12 +497,14 @@ ul {
     position: relative;
     z-index: 2;
     filter: grayscale(100%) contrast(1.1);
-    /* Fits brutalist theme */
-    transition: filter 0.4s var(--ease-out-expo);
+    border-radius: inherit;
+    transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: filter, transform;
 }
 
-.profile-photo:hover {
+.profile-photo-container:hover .profile-photo {
     filter: grayscale(25%);
+    transform: scale(1.05);
 }
 
 .photo-placeholder {
@@ -578,7 +566,7 @@ ul {
     color: var(--text-tertiary);
 }
 
-/* Works Section*/
+/* Selected Works */
 .projects-list {
     display: flex;
     flex-direction: column;
@@ -647,9 +635,21 @@ ul {
     padding: 0.4rem 1rem;
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-full);
+    display: inline-block;
+    transition: transform 0.8s var(--ease-out-expo),
+        color 0.6s var(--ease-out-expo),
+        border-color 0.6s var(--ease-out-expo),
+        background-color 0.6s var(--ease-out-expo);
 }
 
-/* experience & certs section */
+.tech-tags span:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Experience & Credentials */
 .subsection-title {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -730,7 +730,7 @@ ul {
     transform: scale(1.05);
 }
 
-/* contact form */
+/* Contact Form */
 .form-container {
     padding: 4rem;
 }
@@ -792,7 +792,7 @@ ul {
     color: var(--bg-base);
 }
 
-/* footer */
+/* Footer */
 .footer {
     padding: 4rem 0;
     border-top: 1px solid var(--glass-border);
@@ -806,7 +806,7 @@ ul {
     color: var(--text-tertiary);
 }
 
-/* scroll reveal */
+/* Scroll Reveal */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -823,7 +823,7 @@ ul {
     transition-delay: 100ms;
 }
 
-/* Responsive Logic*/
+/* Responsive Logic */
 
 /* Large Tablets & Small Laptops (max-width: 1200px) */
 @media (max-width: 1200px) {
